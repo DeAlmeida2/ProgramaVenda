@@ -62,7 +62,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.BackColor = System.Drawing.Color.Teal;
             this.panel1.Controls.Add(this.btCadProd);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -73,7 +73,7 @@
             this.panel1.Controls.Add(this.tbPrecoProduto);
             this.panel1.Controls.Add(this.tbNomeProduto);
             this.panel1.Controls.Add(this.tbIdPKproduto);
-            this.panel1.Location = new System.Drawing.Point(225, 15);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(238, 320);
             this.panel1.TabIndex = 0;
@@ -191,6 +191,7 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkSlateGray;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idpkDataGridViewTextBoxColumn,
@@ -198,8 +199,9 @@
             this.precoDataGridViewTextBoxColumn,
             this.estoqueDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.produtoBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(494, 15);
+            this.dataGridView1.Location = new System.Drawing.Point(281, 12);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.Size = new System.Drawing.Size(443, 308);
             this.dataGridView1.TabIndex = 1;
             // 
@@ -245,10 +247,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(949, 347);
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ClientSize = new System.Drawing.Size(860, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CadProduto";
             this.Text = "Cadastrar Produto";

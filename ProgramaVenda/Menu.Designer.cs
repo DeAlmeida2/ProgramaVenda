@@ -42,13 +42,15 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.button_Reportes = new System.Windows.Forms.Button();
             this.panel_Menu = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel_MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_MenuVertical
             // 
-            this.panel_MenuVertical.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel_MenuVertical.BackColor = System.Drawing.Color.Teal;
             this.panel_MenuVertical.Controls.Add(this.panel5);
             this.panel_MenuVertical.Controls.Add(this.button_Reportes);
             this.panel_MenuVertical.Controls.Add(this.panel4);
@@ -63,7 +65,7 @@
             this.panel_MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.panel_MenuVertical.Name = "panel_MenuVertical";
-            this.panel_MenuVertical.Size = new System.Drawing.Size(220, 356);
+            this.panel_MenuVertical.Size = new System.Drawing.Size(220, 506);
             this.panel_MenuVertical.TabIndex = 0;
             this.panel_MenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_MenuVertical_Paint);
             // 
@@ -204,24 +206,41 @@
             // 
             // panel_Menu
             // 
+            this.panel_Menu.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel_Menu.Controls.Add(this.label1);
             this.panel_Menu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Menu.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.panel_Menu.Location = new System.Drawing.Point(220, 0);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(580, 356);
+            this.panel_Menu.Size = new System.Drawing.Size(831, 506);
             this.panel_Menu.TabIndex = 1;
             this.panel_Menu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Menu_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(313, 211);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(239, 90);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nortel";
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 356);
+            this.ClientSize = new System.Drawing.Size(1051, 506);
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.panel_MenuVertical);
             this.Name = "Menu";
             this.Text = "Menu";
             this.panel_MenuVertical.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel_Menu.ResumeLayout(false);
+            this.panel_Menu.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -241,5 +260,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button_Reportes;
         private System.Windows.Forms.Panel panel_Menu;
+        private System.Windows.Forms.Label label1;
     }
 }

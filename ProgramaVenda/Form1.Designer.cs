@@ -52,8 +52,6 @@
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.estoqueDataSet = new ProgramaVenda.EstoqueDataSet();
             this.clienteTableAdapter = new ProgramaVenda.EstoqueDataSetTableAdapters.clienteTableAdapter();
-            this.btCadProduto = new System.Windows.Forms.Button();
-            this.btVenda = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
@@ -77,7 +75,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.BackColor = System.Drawing.Color.Teal;
             this.panel1.Controls.Add(this.btcadastrar);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -195,6 +193,7 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkSlateGray;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idclienteDataGridViewTextBoxColumn,
@@ -203,9 +202,10 @@
             this.telefoneDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.clienteBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(289, 34);
+            this.dataGridView1.Location = new System.Drawing.Point(275, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(544, 330);
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView1.Size = new System.Drawing.Size(544, 352);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -253,36 +253,15 @@
             // 
             this.clienteTableAdapter.ClearBeforeFill = true;
             // 
-            // btCadProduto
-            // 
-            this.btCadProduto.Location = new System.Drawing.Point(593, 392);
-            this.btCadProduto.Name = "btCadProduto";
-            this.btCadProduto.Size = new System.Drawing.Size(111, 37);
-            this.btCadProduto.TabIndex = 4;
-            this.btCadProduto.Text = "Cadastrar Produto";
-            this.btCadProduto.UseVisualStyleBackColor = true;
-            this.btCadProduto.Click += new System.EventHandler(this.btCadProduto_Click);
-            // 
-            // btVenda
-            // 
-            this.btVenda.Location = new System.Drawing.Point(722, 392);
-            this.btVenda.Name = "btVenda";
-            this.btVenda.Size = new System.Drawing.Size(111, 37);
-            this.btVenda.TabIndex = 5;
-            this.btVenda.Text = "Fazer uma Venda";
-            this.btVenda.UseVisualStyleBackColor = true;
-            this.btVenda.Click += new System.EventHandler(this.btVenda_Click);
-            // 
             // CadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(900, 450);
-            this.Controls.Add(this.btVenda);
-            this.Controls.Add(this.btCadProduto);
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ClientSize = new System.Drawing.Size(860, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CadCliente";
             this.Text = "Cadastro de Clientes";
@@ -320,8 +299,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btCadProduto;
-        private System.Windows.Forms.Button btVenda;
     }
 }
 

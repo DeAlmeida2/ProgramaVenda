@@ -29,14 +29,14 @@ namespace ProgramaVenda
             this.valorTotal = valorTotal;
 
         }
-        public bool gravarItemVenda()
+        public bool gravarItemVenda()//gravar os items da venda
         {
 
             Banco banco = new Banco();
             SqlConnection cn = banco.abrirConexao();
             SqlTransaction tran = cn.BeginTransaction();
 
-            string texto = "insert into produto values (@Id_pk, @Id_vendas, @Id_produto, @valorUnitario, @quantidade, @valorTotal)";
+            string texto = "insert into itemVenda (Id_vendas,Id_vendas, Id_produto, alorUnitario, quantidade, valorTotal) values (@Id_vendas, @Id_produto, @valorUnitario, @quantidade, @valorTotal)";
 
             SqlCommand command = new SqlCommand(texto, cn);
             command.Connection = cn;
@@ -45,19 +45,19 @@ namespace ProgramaVenda
 
             //command.CommandText = "insert into produto values (@Id_pk, @Id_vendas, @Id_produto, @valorUnitario, @quantidade, @valorTotal)";
 
-            command.Parameters.AddWithValue("@Id_pk", Id_pk);
+            //command.Parameters.AddWithValue("@Id_pk", Id_pk);
             command.Parameters.AddWithValue("@Id_vendas", Id_vendas);
             command.Parameters.AddWithValue("@Id_produto", Id_produto);
             command.Parameters.AddWithValue("@valorUnitario", valorUnitario);
             command.Parameters.AddWithValue("@quantidade", quantidade);
             command.Parameters.AddWithValue("@valorTotal", valorTotal);
 
-            command.Parameters[0].Value = Id_pk;
-            command.Parameters[1].Value = Id_vendas;
-            command.Parameters[2].Value = Id_produto;
-            command.Parameters[3].Value = valorUnitario;
-            command.Parameters[4].Value = quantidade;
-            command.Parameters[5].Value = valorTotal;
+            //command.Parameters[0].Value = Id_pk; //tive que remover o ID_pk pois o banco já estava criando um
+            command.Parameters[0].Value = Id_vendas;
+            command.Parameters[1].Value = Id_produto;
+            command.Parameters[2].Value = valorUnitario;
+            command.Parameters[3].Value = quantidade;
+            command.Parameters[4].Value = valorTotal;
 
             try
             {

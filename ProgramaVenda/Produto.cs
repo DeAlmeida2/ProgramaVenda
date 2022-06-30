@@ -14,6 +14,7 @@ namespace ProgramaVenda
         public string nome;
         public string preco;
         public string estoque;
+        public Produto() { }
 
         public Produto(int Id_pk, string nome, string preco, string estoque)
         {
@@ -22,7 +23,7 @@ namespace ProgramaVenda
             this.preco = preco;
             this.estoque = estoque;
         }
-        public bool gravarProduto()
+        public bool gravarProduto()//gravar o produto
         {
 
             Banco banco = new Banco();
@@ -65,6 +66,39 @@ namespace ProgramaVenda
             finally
             {
                 banco.fecharConexao();
+            }
+        }
+        public Produto ConsultaProduto (int id)//consultar o produto no banco e debitar os valores que fizemos na venda
+        {
+            Banco bd = new Banco();
+            try
+            {
+                SqlConnection cn = bd.abrirConexao();
+                SqlCommand command = new SqlCommand($"select * from Produto where Id_pk = {id}", cn);
+
+                SqlDataReader rdr = command.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    if (rdr.GetInt32(0) == id)
+                    {
+                        Id_pk = rdr.GetInt32(0);
+                        nome = rdr.GetString(1);
+                        preco = rdr.GetString(2);
+                        estoque = rdr.GetString(3);
+                        
+                        return this;
+                    }
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                bd.fecharConexao();
             }
         }
     }

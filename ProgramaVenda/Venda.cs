@@ -21,14 +21,14 @@ namespace ProgramaVenda
             this.valorTotal = valorTotal;
         }
 
-        public bool gravarVenda()
+        public bool gravarVenda()//gravar a venda
         {
 
             Banco banco = new Banco();
             SqlConnection cn = banco.abrirConexao();
             SqlTransaction tran = cn.BeginTransaction();
 
-            string texto = "insert into produto values (@Id_vendas, @codigoCliente, @valorTotal)";
+            string texto = "insert into vendas (codigoCliente,valorTotal) values (@codigoCliente, @valorTotal)";
 
             SqlCommand command = new SqlCommand(texto, cn);
             command.Connection = cn;
@@ -38,13 +38,13 @@ namespace ProgramaVenda
             //command.CommandText = "insert into produto values (@Id_vendas, @codigoCliente, @valorTotal)";
 
 
-            command.Parameters.AddWithValue("@Id_vendas", Id_vendas);
+            //command.Parameters.AddWithValue("@Id_vendas", Id_vendas);
             command.Parameters.AddWithValue("@codigoCliente", codigoCliente);
             command.Parameters.AddWithValue("@valorTotal", valorTotal);
 
-            command.Parameters[0].Value = Id_vendas;
-            command.Parameters[1].Value = codigoCliente;
-            command.Parameters[2].Value = valorTotal;
+            //command.Parameters[0].Value = Id_vendas;
+            command.Parameters[0].Value = codigoCliente;
+            command.Parameters[1].Value = valorTotal;
 
             try
             {

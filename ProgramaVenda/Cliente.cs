@@ -23,7 +23,7 @@ namespace ProgramaVenda
             this.telefone = telefone;
             this.email = email; 
         }
-        public bool gravarCliente()
+        public bool gravarCliente()//gravar o cliente
         {
 
 
